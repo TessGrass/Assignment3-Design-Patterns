@@ -40,6 +40,8 @@ public class Deck {
    * @return the card to get and remove.
    */
   public Card.Mutable getCard() {
+    System.out.println("hlff");
+/*     Card.Mutable c = cards.get(0); */
     Card.Mutable c = cards.get(0);
     cards.remove(0);
 
