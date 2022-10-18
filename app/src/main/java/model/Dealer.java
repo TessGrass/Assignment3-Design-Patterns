@@ -90,7 +90,15 @@ public class Dealer extends Player {
    */
   public boolean stand() {
     //TODO: implement me
-    return false;
+    if (deck == null) {
+      return false;
+    }
+    this.showHand();
+    while (hitRule.doHit(this) == true) {
+      Card.Mutable c = deck.getCard();
+      c.show(true);
+      this.dealCard(c);
+    }
   }
 
 }

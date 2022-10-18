@@ -59,6 +59,7 @@ public class Game {
    */
   public boolean stand() {
     // TODO: implement me
+    dealer.stand();
     return false;
   }
 
