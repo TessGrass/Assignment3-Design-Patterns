@@ -99,6 +99,7 @@ public class Dealer extends Player {
       c.show(true);
       this.dealCard(c);
     }
+    return true;
   }
 
 }
