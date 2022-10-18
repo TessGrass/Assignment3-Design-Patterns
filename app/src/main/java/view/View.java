@@ -1,5 +1,7 @@
 package view;
 
+import controller.EnumEvent;
+
 /**
  * Encapsulates the generic view functionality.
  */
@@ -15,7 +17,7 @@ public interface View {
 
    * @return the pressed character.
    */
-  int getInput();
+  EnumEvent getInput();
 
   /**
    * Displays a card.

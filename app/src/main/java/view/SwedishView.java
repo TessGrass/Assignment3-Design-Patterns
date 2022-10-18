@@ -1,5 +1,7 @@
 package view;
 
+import controller.EnumEvent;
+
 /**
  * Implements a Swedish console view.
  */
@@ -13,7 +15,7 @@ public class SwedishView implements View {
       System.out.print("\n");
     }
 
-    System.out.println("Hej Black Jack Världen");
+    System.out.println("Hej Black Jack-Världen");
     System.out.println("----------------------");
     System.out.println("Skriv 'p' för att Spela, 'h' för nytt kort, 's' för att stanna 'q' för att avsluta\n");
   }
@@ -23,17 +25,29 @@ public class SwedishView implements View {
 
    * @return the pressed character.
    */
-  public int getInput() {
+  public EnumEvent getInput() {
     try {
       int c = System.in.read();
+      // System.out.println("TEST" + c);
       while (c == '\r' || c == '\n') {
         c = System.in.read();
       }
-      return c;
+      if (c == 'p') {
+        // game.newGame();
+        return EnumEvent.NewGame;
+      } else if (c == 'h') {
+        return EnumEvent.Hit;
+      } else if (c == 's') {
+        return EnumEvent.Stand;
+      } else if (c == 'q') {
+        return EnumEvent.Quit;
+      }
+      return EnumEvent.WrongInput;
     } catch (java.io.IOException e) {
       System.out.println("" + e);
-      return 0;
+      // return 0;
     }
+    return null;
   }
 
   /**

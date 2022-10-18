@@ -26,16 +26,19 @@ public class Player {
       view.displayGameOver(game.isDealerWinner());
     }
 
-    int input = view.getInput();
+    // int input = view.getInput();
+    EnumEvent input = view.getInput();
 
-    if (input == 'p') {
+    // System.out.println("TEST " + input);
+
+    if (input == EnumEvent.NewGame) {
       game.newGame();
-    } else if (input == 'h') {
+    } else if (input == EnumEvent.Hit) {
       game.hit();
-    } else if (input == 's') {
+    } else if (input == EnumEvent.Stand) {
       game.stand();
     }
 
-    return input != 'q';
+    return input != EnumEvent.Quit;
   }
 }
