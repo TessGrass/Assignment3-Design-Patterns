@@ -95,9 +95,9 @@ public class Dealer extends Player {
     }
     this.showHand();
     while (hitRule.doHit(this) == true) {
-      Card.Mutable c = deck.getCard();
-      c.show(true);
-      this.dealCard(c);
+      Card.Mutable card = deck.getCard();
+      card.show(true);
+      this.dealCard(card);
     }
     return true;
   }
