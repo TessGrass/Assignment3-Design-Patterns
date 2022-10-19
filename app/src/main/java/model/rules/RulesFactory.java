@@ -26,5 +26,6 @@ public class RulesFactory {
    */
   public NewGameStrategy getNewGameRule() {
     return new AmericanNewGameStrategy();
+    /* return new InternationalNewGameStrategy(); */
   }
 }
