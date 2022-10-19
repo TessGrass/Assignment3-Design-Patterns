@@ -49,7 +49,7 @@ public class Game {
    * @return True if the player got a new card.
    */
   public boolean hit() {
-    return dealer.hit(player);
+    return dealer.hit(player, true);
   }
 
   /**

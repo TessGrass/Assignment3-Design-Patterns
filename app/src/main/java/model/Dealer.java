@@ -49,11 +49,11 @@ public class Dealer extends Player {
    * @param player The player to give a card to.
    * @return true if the player could get a new card, false otherwise.
    */
-  public boolean hit(Player player) {
+  public boolean hit(Player player, boolean showCard) {
     if (deck != null && player.calcScore() < maxScore && !isGameOver()) {
       Card.Mutable c;
       c = deck.getCard();
-      c.show(true);
+      c.show(showCard);
       player.dealCard(c);
 
       return true;
