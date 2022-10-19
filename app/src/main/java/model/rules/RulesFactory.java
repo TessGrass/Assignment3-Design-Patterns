@@ -16,7 +16,7 @@ public class RulesFactory {
   }
 
   public WinnerStrategy getWinnerRule() {
-    return null;
+    return new PlayerAdvantageStrategy();
   }
 
   /**

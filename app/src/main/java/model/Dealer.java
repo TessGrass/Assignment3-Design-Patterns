@@ -2,6 +2,7 @@ package model;
 
 import model.rules.HitStrategy;
 import model.rules.NewGameStrategy;
+import model.rules.WinnerStrategy;
 import model.rules.RulesFactory;
 
 /**
@@ -12,6 +13,7 @@ public class Dealer extends Player {
   private Deck deck;
   private NewGameStrategy newGameRule;
   private HitStrategy hitRule;
+  private WinnerStrategy winnerRule;
 
   /**
    * Initializing constructor.
@@ -22,6 +24,7 @@ public class Dealer extends Player {
 
     newGameRule = rulesFactory.getNewGameRule();
     hitRule = rulesFactory.getHitRule();
+    winnerRule = rulesFactory.getWinnerRule();
     //FIXIS add rule
   }
 
@@ -66,6 +69,7 @@ public class Dealer extends Player {
    * @return True if the dealer is the winner, false if the player is the winner.
    */
   public boolean isDealerWinner(Player player) {
+    winnerRule.isDealerWinner();
     if (player.calcScore() > maxScore) {
       return true;
     } else if (calcScore() > maxScore) {
