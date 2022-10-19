@@ -7,7 +7,7 @@ import view.View;
 /**
  * Scenario controller for playing the game.
  */
-public class Player {
+public class Player implements Observer {
 
   /**
    * Runs the play use case.
@@ -26,10 +26,7 @@ public class Player {
       view.displayGameOver(game.isDealerWinner());
     }
 
-    // int input = view.getInput();
     EnumEvent input = view.getInput();
-
-    // System.out.println("TEST " + input);
 
     if (input == EnumEvent.NewGame) {
       game.newGame();
@@ -40,5 +37,13 @@ public class Player {
     }
 
     return input != EnumEvent.Quit;
+  }
+
+  @Override
+  public void update() {
+    // TODO Auto-generated method stub
+    System.out.println("I min update.");
+    // view.displayDealerHand(game.getDealerHand(), game.getDealerScore());
+    // view.displayPlayerHand(game.getPlayerHand(), game.getPlayerScore());
   }
 }
