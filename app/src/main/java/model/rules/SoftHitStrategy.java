@@ -3,6 +3,10 @@ package model.rules;
 import model.Card;
 import model.Player;
  
+/**
+ * SoftHitStrategy class.
+ * 
+ */
 public class SoftHitStrategy implements HitStrategy {
   private static final int hitLimit = 17;
  

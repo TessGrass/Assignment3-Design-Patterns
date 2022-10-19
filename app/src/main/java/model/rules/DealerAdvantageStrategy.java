@@ -1,5 +1,9 @@
 package model.rules;
 
+/**
+ * DealerAdvantageStrategy class.
+ *
+ */
 public class DealerAdvantageStrategy implements WinnerStrategy {
 
   @Override

@@ -1,9 +1,7 @@
 package model;
 
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 /**
@@ -40,8 +38,6 @@ public class Deck {
    * @return the card to get and remove.
    */
   public Card.Mutable getCard() {
-    System.out.println("hlff");
-/*     Card.Mutable c = cards.get(0); */
     Card.Mutable c = cards.get(0);
     cards.remove(0);
 
