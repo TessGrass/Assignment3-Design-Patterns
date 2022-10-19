@@ -28,12 +28,10 @@ public class SwedishView implements View {
   public EnumEvent getInput() {
     try {
       int c = System.in.read();
-      // System.out.println("TEST" + c);
       while (c == '\r' || c == '\n') {
         c = System.in.read();
       }
       if (c == 'p') {
-        // game.newGame();
         return EnumEvent.NewGame;
       } else if (c == 'h') {
         return EnumEvent.Hit;
@@ -45,9 +43,8 @@ public class SwedishView implements View {
       return EnumEvent.WrongInput;
     } catch (java.io.IOException e) {
       System.out.println("" + e);
-      // return 0;
+      return EnumEvent.Quit;
     }
-    return null;
   }
 
   /**
