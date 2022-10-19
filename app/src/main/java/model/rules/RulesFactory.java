@@ -15,6 +15,10 @@ public class RulesFactory {
     return new SoftHitStrategy();
   }
 
+  public WinnerStrategy getWinnerRule() {
+    return null;
+  }
+
   /**
    * Crates the rule to use when starting a new game.
 

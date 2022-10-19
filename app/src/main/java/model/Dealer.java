@@ -22,6 +22,7 @@ public class Dealer extends Player {
 
     newGameRule = rulesFactory.getNewGameRule();
     hitRule = rulesFactory.getHitRule();
+    //FIXIS add rule
   }
 
   /**
@@ -89,7 +90,7 @@ public class Dealer extends Player {
    * The player has choosen to take no more cards, it is the dealers turn.
    */
   public boolean stand() {
-    //TODO: implement me
+
     if (deck == null) {
       return false;
     }
@@ -101,5 +102,4 @@ public class Dealer extends Player {
     }
     return true;
   }
-
 }
