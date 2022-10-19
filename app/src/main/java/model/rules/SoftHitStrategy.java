@@ -12,10 +12,9 @@ public class SoftHitStrategy implements HitStrategy {
 
     if (dealer.calcScore() < hitLimit) {
       return true;
-
     } else if (dealer.calcScore() == hitLimit) {
       Iterable<Card> dealerCards = dealer.getHand();
-        
+
       for (Card card : dealerCards) {
         if (card.getValue() == Card.Value.Ace) {
           numberOfAcesInHand += 1;         
