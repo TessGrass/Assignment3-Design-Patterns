@@ -69,13 +69,14 @@ public class Dealer extends Player {
    * @return True if the dealer is the winner, false if the player is the winner.
    */
   public boolean isDealerWinner(Player player) {
-    winnerRule.isDealerWinner();
     if (player.calcScore() > maxScore) {
       return true;
     } else if (calcScore() > maxScore) {
       return false;
     }
-    return calcScore() >= player.calcScore();
+    /* return calcScore() >= player.calcScore(); */
+    boolean dealerWins = winnerRule.isDealerWinner(calcScore(), player.calcScore());
+    return dealerWins;
   }
 
   /**

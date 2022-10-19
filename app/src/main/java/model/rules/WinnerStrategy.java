@@ -2,5 +2,5 @@ package model.rules;
 
 public interface WinnerStrategy {
   
-  boolean isDealerWinner();
+  boolean isDealerWinner(int dealerScore, int playerScore);
 }
