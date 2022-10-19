@@ -8,21 +8,22 @@ public class SoftHitStrategy implements HitStrategy {
  
   @Override
   public boolean doHit(Player dealer) {
+    int numberOfAcesInHand = 0;
 
     if (dealer.calcScore() < hitLimit) {
       return true;
 
     } else if (dealer.calcScore() == hitLimit) {
-      System.out.println("Har träffat 17");
       Iterable<Card> dealerCards = dealer.getHand();
-      
+        
       for (Card card : dealerCards) {
         if (card.getValue() == Card.Value.Ace) {
-          System.out.println("Har ett ess");
-          return true;
-            
+          numberOfAcesInHand += 1;         
         }
       }
+    }
+    if (numberOfAcesInHand == 1) {
+      return true;
     }
     return false;
   }

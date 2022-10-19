@@ -43,9 +43,8 @@ public class EnglishView implements View {
       return EnumEvent.WrongInput;
     } catch (java.io.IOException e) {
       System.out.println("" + e);
-      // return 0;
+      return EnumEvent.Quit;
     }
-    return null;
   }
 
   public void displayCard(model.Card card) {
