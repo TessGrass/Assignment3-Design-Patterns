@@ -1,5 +1,9 @@
 package controller;
 
+/**
+ * EnumEvent class.
+ *
+ */
 public enum EnumEvent {
   NewGame,
   Hit,
