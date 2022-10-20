@@ -21,10 +21,12 @@ An operation has been implemented, stand in the Game class, which makes the game
 The Blackjack rule, Soft 17, is incorporated in the game, which basically means that if a dealer has a combination of Ace and 6 (i.e., 17) they can change the Ace value to 1 and ask for another card. The Observer pattern is used to briefly paus the game to give it a bit of an edge.
 
 ## Building
+
 The build must pass by running console command:  
 `./gradlew build`
 
 ## Running
+
 The application should start by running console command:  
 `./gradlew run -q --console=plain`
 
