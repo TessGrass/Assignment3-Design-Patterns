@@ -1,6 +1,7 @@
 package controller;
 
 import model.Game;
+import model.Observer;
 import view.View;
 
 
@@ -8,6 +9,14 @@ import view.View;
  * Scenario controller for playing the game.
  */
 public class Player implements Observer {
+  private View view;
+  private Game game;
+
+
+  public Player(View view, Game game) {
+    this.view = view;
+    this.game = game;
+  }
 
   /**
    * Runs the play use case.
@@ -16,11 +25,8 @@ public class Player implements Observer {
    * @param view The view to use.
    * @return True as long as the game should continue.
    */
-  public boolean play(Game game, View view) {
+  public boolean play() {
     view.displayWelcomeMessage();
-
-    view.displayDealerHand(game.getDealerHand(), game.getDealerScore());
-    view.displayPlayerHand(game.getPlayerHand(), game.getPlayerScore());
 
     if (game.isGameOver()) {
       view.displayGameOver(game.isDealerWinner());
@@ -41,9 +47,7 @@ public class Player implements Observer {
 
   @Override
   public void update() {
-    // TODO Auto-generated method stub
-    System.out.println("I min update.");
-    // view.displayDealerHand(game.getDealerHand(), game.getDealerScore());
-    // view.displayPlayerHand(game.getPlayerHand(), game.getPlayerScore());
+    view.displayDealerHand(game.getDealerHand(), game.getDealerScore());
+    view.displayPlayerHand(game.getPlayerHand(), game.getPlayerScore());
   }
 }

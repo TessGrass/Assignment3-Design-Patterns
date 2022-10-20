@@ -10,16 +10,16 @@ import view.View;
 public class App {
   /**
    * Starts the game.
-
+   * 
   * @param args Not used.
   */
   public static void main(String[] args) {
 
     Game g = new Game();
     View v = new EnglishView(); // new SwedishView();
-    Player ctrl = new Player();
-
-    while (ctrl.play(g, v)) {
+    Player ctrl = new Player(v, g);
+    g.addCtrl(ctrl);
+    while (ctrl.play()) {
 
     }
   }

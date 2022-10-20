@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import model.rules.HitStrategy;
 import model.rules.NewGameStrategy;
 import model.rules.RulesFactory;
@@ -8,8 +9,9 @@ import model.rules.WinnerStrategy;
 /**
  * Represents a dealer player that handles the deck of cards and runs the game using rules.
  */
-public class Dealer extends Player {
+public class Dealer extends Player implements Observable {
 
+  private ArrayList<Observer> observers = new ArrayList<>();
   private Deck deck;
   private NewGameStrategy newGameRule;
   private HitStrategy hitRule;
@@ -55,7 +57,7 @@ public class Dealer extends Player {
       c = deck.getCard();
       c.show(showCard);
       player.dealCard(c);
-
+      notifyObserver();
       return true;
     }
     return false;
@@ -94,16 +96,29 @@ public class Dealer extends Player {
    * The player has choosen to take no more cards, it is the dealers turn.
    */
   public boolean stand() {
+    boolean hasDealerHit = false;
+    System.out.println("STAND");
 
     if (deck == null) {
       return false;
     }
+
     this.showHand();
     while (hitRule.doHit(this) == true) {
-      Card.Mutable card = deck.getCard();
-      card.show(true);
-      this.dealCard(card);
+      hasDealerHit = hit(this, true);
     }
-    return true;
+    return hasDealerHit;
+  }
+
+  @Override
+  public void add(Observer theObserver) {
+    observers.add(theObserver);
+  }
+
+  @Override
+  public void notifyObserver() {
+    for (Observer o : observers) {
+      o.update();
+    }
   }
 }

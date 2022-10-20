@@ -1,14 +1,9 @@
 package model;
 
-import java.util.ArrayList;
-import controller.Observer;
-import model.rules.Observable;
-
 /**
  * Represents the entirety of the game. Acts as a Facade to the model.
  */
-public class Game implements Observable {
-  ArrayList<Observer> observers = new ArrayList<>();
+public class Game {
   private Dealer dealer;
   private Player player;
 
@@ -18,6 +13,10 @@ public class Game implements Observable {
   public Game() {
     dealer = new Dealer(new model.rules.RulesFactory());
     player = new Player();
+  }
+
+  public void addCtrl(Observer ctrl) {
+    dealer.add(ctrl);
   }
 
   /**
@@ -100,18 +99,5 @@ public class Game implements Observable {
    */
   public int getPlayerScore() {
     return player.calcScore();
-  }
-
-  @Override
-  public void add(Observer theObserver) {
-    // TODO Auto-generated method stub
-    observers.add(theObserver);
-    
-  }
-
-  @Override
-  public void notifyObserver() {
-    // TODO Auto-generated method stub
-    
   }
 }

@@ -1,6 +1,4 @@
-package model.rules;
-
-import controller.Observer;
+package model;
 
 /**
  * Observable interface.
