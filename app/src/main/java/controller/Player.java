@@ -1,5 +1,6 @@
 package controller;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import model.Game;
 import model.Observer;
 import view.View;
@@ -13,7 +14,7 @@ public class Player implements Observer {
   private View view;
   private Game game;
 
-
+  @SuppressFBWarnings(value = "EI_EXPOSE_REP")
   public Player(View view, Game game) {
     this.view = view;
     this.game = game;
