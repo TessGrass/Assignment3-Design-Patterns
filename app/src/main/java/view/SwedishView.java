@@ -15,7 +15,7 @@ public class SwedishView implements View {
       System.out.print("\n");
     }
 
-    System.out.println("Hej Black Jack-Världen");
+    System.out.println("Hej Black Jack-världen");
     System.out.println("----------------------");
     System.out.println("Skriv 'p' för att Spela, 'h' för nytt kort, 's' för att stanna 'q' för att avsluta\n");
   }
@@ -92,5 +92,11 @@ public class SwedishView implements View {
     }
     System.out.println("Poäng: " + score);
     System.out.println("");
+  }
+
+  @Override
+  public void printLineBetweenTurn() {
+    System.out.println("--------------" + "\n");
+    
   }
 }

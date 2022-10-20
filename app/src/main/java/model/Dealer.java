@@ -99,7 +99,6 @@ public class Dealer extends Player implements Observable {
    */
   public boolean stand() {
     boolean hasDealerHit = false;
-    System.out.println("STAND");
 
     if (deck == null) {
       return false;

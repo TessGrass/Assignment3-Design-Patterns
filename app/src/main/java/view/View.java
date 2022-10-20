@@ -48,4 +48,6 @@ public interface View {
    * @param dealerIsWinner True if the dealer is the winner.
    */
   void displayGameOver(boolean dealerIsWinner);
+
+  void printLineBetweenTurn();
 }

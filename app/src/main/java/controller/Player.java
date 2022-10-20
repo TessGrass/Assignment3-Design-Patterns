@@ -48,5 +48,24 @@ public class Player implements Observer {
   public void update() {
     view.displayDealerHand(game.getDealerHand(), game.getDealerScore());
     view.displayPlayerHand(game.getPlayerHand(), game.getPlayerScore());
+    view.printLineBetweenTurn();
+    try {
+      setApplicationToSleep();
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
+  }
+
+  /**
+   * Set application to sleep.
+   *
+   * @throws InterruptedException - Throws an exception if thread is interupted.
+   */
+  public void setApplicationToSleep() throws InterruptedException {
+    try {
+      Thread.sleep(3000);
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
   }
 }

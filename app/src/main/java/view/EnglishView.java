@@ -26,12 +26,10 @@ public class EnglishView implements View {
   public EnumEvent getInput() {
     try {
       int c = System.in.read();
-      // System.out.println("TEST" + c);
       while (c == '\r' || c == '\n') {
         c = System.in.read();
       }
       if (c == 'p') {
-        // game.newGame();
         return EnumEvent.NewGame;
       } else if (c == 'h') {
         return EnumEvent.Hit;
@@ -81,5 +79,11 @@ public class EnglishView implements View {
       System.out.println("You Won!");
     }
 
+  }
+
+  @Override
+  public void printLineBetweenTurn() {
+    System.out.println("--------------" + "\n");
+    
   }
 }
