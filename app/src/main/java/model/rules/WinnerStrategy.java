@@ -2,6 +2,7 @@ package model.rules;
 
 /**
  * WinnerStrategy interface.
+ *
  */
 public interface WinnerStrategy {
   

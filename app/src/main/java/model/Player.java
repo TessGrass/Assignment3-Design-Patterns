@@ -5,6 +5,7 @@ import java.util.List;
 
 /**
  * Represents a player in the Black Jack game. A Player has a hand of cards.
+ *
  */
 public class Player {
 
@@ -17,7 +18,7 @@ public class Player {
 
   /**
    * Adds a card to the Player's hand. 
-
+   *
    * @param addToHand The card to add to the hand.
    */
   public void dealCard(Card.Mutable addToHand) {

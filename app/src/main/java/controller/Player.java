@@ -7,6 +7,7 @@ import view.View;
 
 /**
  * Scenario controller for playing the game.
+ *
  */
 public class Player implements Observer {
   private View view;
@@ -20,9 +21,7 @@ public class Player implements Observer {
 
   /**
    * Runs the play use case.
-
-   * @param game The game state.
-   * @param view The view to use.
+   *
    * @return True as long as the game should continue.
    */
   public boolean play() {

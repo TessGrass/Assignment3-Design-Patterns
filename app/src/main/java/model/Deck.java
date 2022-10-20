@@ -6,6 +6,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * Represents a deck of playingcards.
+ *
  */
 public class Deck {
 
@@ -14,6 +15,7 @@ public class Deck {
 
   /**
    * Creates a deck with 52 cards of every color and value in random order.
+   *
    */
   public Deck() {
     cards = new LinkedList<Card.Mutable>();
@@ -34,7 +36,7 @@ public class Deck {
 
   /**
    * Gets the first card in the deck. The card is removed from the deck.
-
+   *
    * @return the card to get and remove.
    */
   public Card.Mutable getCard() {
