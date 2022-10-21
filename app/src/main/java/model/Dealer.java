@@ -122,4 +122,9 @@ public class Dealer extends Player implements Observable {
       o.update();
     }
   }
+
+  @Override
+  public void remove(Observer theObserver) {
+    observers.remove(theObserver);
+  }
 }
