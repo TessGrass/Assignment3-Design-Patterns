@@ -26,7 +26,20 @@ public class SoftHitStrategy implements HitStrategy {
       }
     }
     if (numberOfAcesInHand == 1) {
-      return true;
+      int[] cardScores = { 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11 };
+      assert (cardScores.length == Card.Value.Count.ordinal())
+          : "Card Scores array size does not match number of card values";
+
+      int valueOfHand = 0;
+      for (Card card : dealer.getHand()) {
+        if (card.getValue() != Card.Value.Ace) {        
+          valueOfHand += cardScores[card.getValue().ordinal()];
+        }
+      }
+
+      if (valueOfHand == 6) {
+        return true;
+      }
     }
     return false;
   }
